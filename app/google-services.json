@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "832757000220",
+    "firebase_url": "https://crudrealtimedb-77d80-default-rtdb.firebaseio.com",
+    "project_id": "crudrealtimedb-77d80",
+    "storage_bucket": "crudrealtimedb-77d80.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832757000220:android:8b1c3d777edc300f9d97d9",
+        "android_client_info": {
+          "package_name": "com.example.crudrealtimedbfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832757000220-6o9ud2kqnkqqie8pjv78bel4o1pnr4q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATE2voj5XP09VDAmu-gQEQRWv8hIRKtfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832757000220-6o9ud2kqnkqqie8pjv78bel4o1pnr4q4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832757000220:android:7eb7ee77106f21f89d97d9",
+        "android_client_info": {
+          "package_name": "com.example.crudrealtimefirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832757000220-6o9ud2kqnkqqie8pjv78bel4o1pnr4q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATE2voj5XP09VDAmu-gQEQRWv8hIRKtfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832757000220-6o9ud2kqnkqqie8pjv78bel4o1pnr4q4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
