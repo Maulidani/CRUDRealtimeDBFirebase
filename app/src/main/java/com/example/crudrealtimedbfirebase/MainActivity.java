@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                         "Please Wait...",
                         true, false);
 
-                submitUser(new Requests(Hnama.toLowerCase(), Hemail.toLowerCase(), Hdesk.toLowerCase()));
+                submitUser(new Requests(Hnama,Hemail,Hdesk));
 
             }
         });
