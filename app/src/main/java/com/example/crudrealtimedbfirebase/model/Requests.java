@@ -6,9 +6,11 @@ import java.io.Serializable;
 
 public class Requests implements Serializable {
 
-    String nama,email,deskripsi;
+    String nama, email, deskripsi;
     String key;
 
+    public Requests() {
+    }
 
     public Requests(String nama, String email, String deskripsi) {
         this.nama = nama;
@@ -47,11 +49,12 @@ public class Requests implements Serializable {
     public void setKey(String key) {
         this.key = key;
     }
+
     @NonNull
     @Override
     public String toString() {
-        return ""+nama+"\n"+
-                ""+email+"\n"+
-                ""+deskripsi;
+        return "" + nama + "\n" +
+                "" + email + "\n" +
+                "" + deskripsi;
     }
 }
