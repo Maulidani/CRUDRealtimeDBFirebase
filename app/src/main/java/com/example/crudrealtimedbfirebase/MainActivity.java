@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void submitUser(Requests requests) {
-        db.child("Request")
+        db.child("Data")
 //                .child("request_satu")
                 .push()
                 .setValue(requests)
