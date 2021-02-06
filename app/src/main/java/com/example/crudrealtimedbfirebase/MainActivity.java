@@ -3,10 +3,14 @@ package com.example.crudrealtimedbfirebase;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.crudrealtimedbfirebase.model.Requests;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -22,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button lihat = findViewById(R.id.btn_lihat);
+        lihat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ReadActivity.class));
+            }
+        });
 
         db = FirebaseDatabase.getInstance().getReference();
 
@@ -57,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void submitUser(Requests requests) {
-        db.child("Data")
+        db.child("Request")
 //                .child("request_satu")
                 .push()
                 .setValue(requests)

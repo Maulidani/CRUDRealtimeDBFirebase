@@ -1,4 +1,4 @@
-package com.example.crudrealtimedbfirebase;
+package com.example.crudrealtimedbfirebase.model;
 
 import androidx.annotation.NonNull;
 
@@ -7,6 +7,8 @@ import java.io.Serializable;
 public class Requests implements Serializable {
 
     String nama,email,deskripsi;
+    String key;
+
 
     public Requests(String nama, String email, String deskripsi) {
         this.nama = nama;
@@ -38,6 +40,13 @@ public class Requests implements Serializable {
         this.deskripsi = deskripsi;
     }
 
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
     @NonNull
     @Override
     public String toString() {
