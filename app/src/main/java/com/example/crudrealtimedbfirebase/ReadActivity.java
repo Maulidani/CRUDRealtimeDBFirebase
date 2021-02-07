@@ -1,17 +1,16 @@
 package com.example.crudrealtimedbfirebase;
 
+import android.app.ProgressDialog;
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ProgressDialog;
-import android.os.Bundle;
-
 import com.example.crudrealtimedbfirebase.adapter.rvAdapter;
 import com.example.crudrealtimedbfirebase.model.Requests;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,7 +21,6 @@ import java.util.ArrayList;
 
 public class ReadActivity extends AppCompatActivity {
 
-    private DatabaseReference db;
     private ArrayList<Requests> listReq;
     private rvAdapter adapter;
     private RecyclerView rv;
@@ -42,7 +40,7 @@ public class ReadActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        db = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference db = FirebaseDatabase.getInstance().getReference();
 
         rv = findViewById(R.id.rv);
 

@@ -1,6 +1,5 @@
 package com.example.crudrealtimedbfirebase.adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,15 +12,13 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.crudrealtimedbfirebase.R;
-import com.example.crudrealtimedbfirebase.ReadActivity;
 import com.example.crudrealtimedbfirebase.model.Requests;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class rvAdapter extends RecyclerView.Adapter<rvAdapter.ViewHolder> {
-    private List<Requests> list;
-    private Context context;
+    private final List<Requests> list;
+    private final Context context;
 
     public rvAdapter(List<Requests> list, Context context) {
         this.list = list;
@@ -45,12 +42,7 @@ public class rvAdapter extends RecyclerView.Adapter<rvAdapter.ViewHolder> {
         holder.nama.setText(data.getNama());
         holder.email.setText(data.getEmail());
 
-        holder.cv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "Detail", Toast.LENGTH_SHORT).show();
-            }
-        });
+        holder.cv.setOnClickListener(v -> Toast.makeText(context, "Detail", Toast.LENGTH_SHORT).show());
 
     }
 
@@ -59,9 +51,9 @@ public class rvAdapter extends RecyclerView.Adapter<rvAdapter.ViewHolder> {
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView nama, email;
-        private CardView cv;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        private final TextView nama, email;
+        private final CardView cv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
