@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class Requests implements Serializable {
 
     String nama, email, deskripsi;
-//    String key;
+    String key;
 
     public Requests() {
     }
@@ -22,33 +22,33 @@ public class Requests implements Serializable {
         return nama;
     }
 
-//    public void setNama(String nama) {
-//        this.nama = nama;
-//    }
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
 
     public String getEmail() {
         return email;
     }
 
-//    public void setEmail(String email) {
-//        this.email = email;
-//    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-//    public String getDeskripsi() {
-//        return deskripsi;
-//    }
+    public String getDeskripsi() {
+        return deskripsi;
+    }
 
-//    public void setDeskripsi(String deskripsi) {
-//        this.deskripsi = deskripsi;
-//    }
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
+    }
 
-//    public String getKey() {
-//        return key;
-//    }
+    public String getKey() {
+        return key;
+    }
 
-//    public void setKey(String key) {
-//        this.key = key;
-//    }
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     @NonNull
     @Override
