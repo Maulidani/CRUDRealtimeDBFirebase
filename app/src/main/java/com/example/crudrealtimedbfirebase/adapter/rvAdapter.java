@@ -20,8 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class rvAdapter extends RecyclerView.Adapter<rvAdapter.ViewHolder> {
-private List<Requests> list;
-private Context context;
+    private List<Requests> list;
+    private Context context;
 
     public rvAdapter(List<Requests> list, Context context) {
         this.list = list;
@@ -40,17 +40,17 @@ private Context context;
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-    final Requests data = list.get(position);
+        final Requests data = list.get(position);
 
-    holder.nama.setText(data.getNama());
-    holder.email.setText(data.getEmail());
+        holder.nama.setText(data.getNama());
+        holder.email.setText(data.getEmail());
 
-    holder.cv.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Toast.makeText(context, "Detail", Toast.LENGTH_SHORT).show();
-        }
-    });
+        holder.cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Detail", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -59,9 +59,10 @@ private Context context;
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView nama,email;
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        private TextView nama, email;
         private CardView cv;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
