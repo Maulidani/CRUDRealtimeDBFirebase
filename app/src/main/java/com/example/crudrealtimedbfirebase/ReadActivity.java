@@ -30,9 +30,17 @@ public class ReadActivity extends AppCompatActivity {
 //    private FloatingActionButton fab_add;
 
     @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         db = FirebaseDatabase.getInstance().getReference();
 
