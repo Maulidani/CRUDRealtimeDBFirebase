@@ -59,7 +59,7 @@ public class ReadActivity extends AppCompatActivity {
                 for (DataSnapshot noteDataSnapshot : snapshot.getChildren()){
 
                     Requests requests = noteDataSnapshot.getValue(Requests.class);
-//                    requests.setKey(noteDataSnapshot.getKey());
+                    requests.setKey(noteDataSnapshot.getKey());
 
                     listReq.add(requests);
                 }

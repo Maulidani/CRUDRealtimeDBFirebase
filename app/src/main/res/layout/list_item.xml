@@ -6,24 +6,19 @@
     android:layout_marginTop="10dp">
 
     <LinearLayout
-        android:paddingVertical="10dp"
-        android:paddingStart="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingVertical="10dp"
+        android:paddingStart="40dp">
 
         <TextView
             android:id="@+id/tv_nama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="nama" />
+            android:text="nama"
+            android:textSize="18dp" />
 
-        <TextView
-            android:id="@+id/tv_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="email"/>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

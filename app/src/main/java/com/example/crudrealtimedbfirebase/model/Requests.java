@@ -2,12 +2,16 @@ package com.example.crudrealtimedbfirebase.model;
 
 import androidx.annotation.NonNull;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+
 import java.io.Serializable;
 
+@IgnoreExtraProperties
 public class Requests implements Serializable {
 
-    String nama, email, deskripsi;
     String key;
+
+    String nama, email, deskripsi;
 
     public Requests() {
     }
@@ -50,11 +54,11 @@ public class Requests implements Serializable {
         this.key = key;
     }
 
-    @NonNull
-    @Override
-    public String toString() {
-        return "" + nama + "\n" +
-                "" + email + "\n" +
-                "" + deskripsi;
-    }
+//    @NonNull
+//    @Override
+//    public String toString() {
+//        return "" + nama + "\n" +
+//                "" + email + "\n" +
+//                "" + deskripsi;
+//    }
 }
