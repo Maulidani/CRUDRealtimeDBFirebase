@@ -24,9 +24,17 @@ public class DetailActivity extends AppCompatActivity {
     private String id, putNama, putEmail, putDesk;
 
     @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         db = FirebaseDatabase.getInstance().getReference();
 
@@ -43,10 +51,7 @@ public class DetailActivity extends AppCompatActivity {
         email.setText(putEmail);
         desk.setText(putDesk);
 
-            Toast.makeText(this, id, Toast.LENGTH_SHORT).show();
-
         findViewById(R.id.btn_edit).setOnClickListener(v -> {
-//                alertEdit();
 
             Hnama = nama.getText().toString();
             Hemail = email.getText().toString();
@@ -57,48 +62,24 @@ public class DetailActivity extends AppCompatActivity {
                     "Please Wait...",
                     true, false);
 
-            editUser(new Requests(Hnama, Hemail, Hdesk), id);
+            editData(new Requests(Hnama, Hemail, Hdesk), id);
+            finish();
+        });
+
+        findViewById(R.id.btn_delete).setOnClickListener(v -> {
+
+            loading = ProgressDialog.show(DetailActivity.this,
+                    null,
+                    "Please Wait...",
+                    true, false);
+
+            deleteData(id);
+            finish();
         });
 
     }
 
-//    private void alertEdit(){
-//        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-//        // set title dialog
-////        alertDialogBuilder.setTitle("Yakin Ingin Mengubah Data ?");
-//
-//        // set pesan dari dialog
-//        alertDialogBuilder
-//                .setMessage("Yakin Ingin Mengubah Data ?")
-//                .setCancelable(false)
-//                .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//
-//                            loading = ProgressDialog.show(DetailActivity.this,
-//                                    null,
-//                                    "Please Wait...",
-//                                    true, false);
-//
-//                            editUser(new Requests(Hnama,Hemail,Hdesk));
-//
-//                    }
-//                })
-//                .setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-////                        dialog.cancel();
-//                    }
-//                });
-//
-//        // membuat alert dialog dari builder
-//        AlertDialog alertDialog = alertDialogBuilder.create();
-//
-//        // menampilkan alert dialog
-//        alertDialog.show();
-//    }
-
-    private void editUser(Requests requests, String id) {
+    private void editData(Requests requests, String id) {
 
         db.child("Request")
                 .child(id)
@@ -107,6 +88,18 @@ public class DetailActivity extends AppCompatActivity {
                     loading.dismiss();
 
                     Toast.makeText(DetailActivity.this, "Data Berhasil diubah", Toast.LENGTH_SHORT).show();
+                });
+    }
+
+    private void deleteData(String id) {
+
+        db.child("Request")
+                .child(id)
+                .removeValue()
+                .addOnSuccessListener(this, aVoid -> {
+                    loading.dismiss();
+
+                    Toast.makeText(DetailActivity.this, "Data Berhasil dihapus", Toast.LENGTH_SHORT).show();
                 });
     }
 }

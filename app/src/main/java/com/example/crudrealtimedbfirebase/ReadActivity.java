@@ -25,7 +25,6 @@ public class ReadActivity extends AppCompatActivity {
     private rvAdapter adapter;
     private RecyclerView rv;
     private ProgressDialog loading;
-//    private FloatingActionButton fab_add;
 
     @Override
     public boolean onSupportNavigateUp() {
